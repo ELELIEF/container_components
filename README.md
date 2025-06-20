@@ -1,16 +1,36 @@
-# container_components
+# 容器类组件示例
 
-A new Flutter project.
+本项目演示了 Flutter 中常用的两种容器类组件：**Padding** 和 **DecoratedBox** 的基本用法和组合方式。
+![](data:image/png;base64,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)
+## 主要内容
 
-## Getting Started
+- **Padding**：用于给子组件添加内边距或外边距。
+- **DecoratedBox**：用于给子组件添加装饰效果，如背景色、圆角、阴影等。
 
-This project is a starting point for a Flutter application.
+## 示例效果
 
-A few resources to get you started if this is your first Flutter project:
+运行后，页面中央会显示一个带圆角和阴影的蓝色盒子，盒子内部有适当的内边距和一行白色文本。
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 如何运行
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. 确保已安装 [Flutter](https://flutter.dev/) 环境。
+2. 在项目根目录下执行：
+
+   ```sh
+   flutter pub get
+   flutter run
+   ```
+
+3. 选择设备后即可看到示例效果。
+
+## 代码结构
+
+- `lib/main.dart`：主程序入口，包含 Padding 和 DecoratedBox 的示例代码。
+
+## 参考章节
+
+- 5.1 填充（Padding）
+- 5.2 装饰容器（DecoratedBox）
+
+---
+如需学习更多 Flutter 容器类组件，请参考官方文档或相关教程。
